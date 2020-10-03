@@ -34,8 +34,12 @@ begin
   case State of
     gsBegan:
       InitialScale := MyScalableControl.Scale;
+
     gsChanged:
-      MyScalableControl.Scale := InitialScale * (1 + Magnification);
+      if Magnification > 0 then
+        MyScalableControl.Scale := InitialScale * (1 + Magnification)
+      else
+        MyScalableControl.Scale := InitialScale / (1 - Magnification);
   end;
 end;
 ```
