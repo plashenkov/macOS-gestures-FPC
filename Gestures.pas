@@ -55,7 +55,7 @@ type
   TMagnificationGesture = class;
 
   TCocoaMagnificationGesture = objcclass(NSMagnificationGestureRecognizer)
-  public
+  private
     FLCLGesture: TMagnificationGesture;
     procedure HandleGesture; message 'handleGesture';
   end;
